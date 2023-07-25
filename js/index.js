@@ -9,10 +9,11 @@ const gameBoard = [
 let player1Score = 0;
 let player2Score = 0;
 
-// Elementos del DOM para mostrar la puntuación de los jugadores y el botón de reinicio
+// Elementos del DOM para mostrar la puntuación de los jugadores y los botones de reinicio
 const player1ScoreElement = document.getElementById('player1-score');
 const player2ScoreElement = document.getElementById('player2-score');
 const resetButton = document.getElementById('reset-button');
+const resetScoreButton = document.getElementById('reset-score-button');
 
 // Tokens de los jugadores (logos de Angular y React)
 const angularLogo = '<img src="images/angular-logo.svg" alt="Angular Logo">';
@@ -135,10 +136,24 @@ resetButton.addEventListener('click', () => {
     resetGame();
 });
 
-/* Función para restablecer el juego */
+// Función para restablecer el juego
 function resetGame() {
     gameBoard.forEach(row => row.fill(''));
     boxes.forEach(box => box.innerHTML = '');
     boxes.forEach(box => box.classList.remove("winner"));
     gameInProgress = true;
+}
+
+// Agrega un evento de clic al botón de reinicio de la puntuación
+resetScoreButton.addEventListener('click', resetScore);
+
+// Función para restablecer la puntuación
+function resetScore() {
+    // Restablece las puntuaciones a 0
+    player1Score = 0;
+    player2Score = 0;
+
+    // Actualiza la puntuación mostrada en el marcador
+    player1ScoreElement.textContent = `angularPlayer: ${player1Score}`;
+    player2ScoreElement.textContent = `reactPlayer: ${player2Score}`;
 }

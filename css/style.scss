@@ -39,6 +39,11 @@ body, html {
         justify-content: center;
         gap: 2em;
     }
+
+    &__buttons-container {
+        display: flex;
+        gap: 2em;
+    }
 }
 
 .game-box {

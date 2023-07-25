@@ -28,6 +28,10 @@ body, html {
   justify-content: center;
   gap: 2em;
 }
+.main__buttons-container {
+  display: flex;
+  gap: 2em;
+}
 
 .game-box {
   background: white;
