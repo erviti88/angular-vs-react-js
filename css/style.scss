@@ -1,0 +1,71 @@
+$primary-color: black;
+$winner-bg-color: lightgreen;
+$line-style: 10px solid black;
+
+@mixin border-style($border-prop) {
+    #{$border-prop}: $line-style;
+}
+
+body, html {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: whitesmoke;
+    height: 100%;
+    margin: 0;
+}
+
+.main {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        display: flex;
+        gap: 2rem;
+        justify-content: center; 
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 2rem;
+        margin: 0;
+        font-family:Verdana, Geneva, Tahoma, sans-serif
+    }
+
+    &__game-container {
+        display: grid;
+        grid-template-columns: repeat(3, 0fr);
+        justify-content: center;
+        gap: 2em;
+    }
+}
+
+.game-box {
+    background: white;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding: 1em;
+
+    &--top {
+        @include border-style(border-bottom);
+    }
+      
+    &--mid {
+        @include border-style(border-left);
+        @include border-style(border-right);
+    }
+      
+    &--bot {
+        @include border-style(border-top);
+    }
+}
+
+.winner {
+    background-color: $winner-bg-color;
+    transition: background-color 0.3s ease;
+}

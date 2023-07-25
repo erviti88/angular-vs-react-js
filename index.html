@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js" defer></script>
+    <title>ANGULAR VS REACT</title>
 </head>
 <body>
-    
+    <main class="main__container">
+        <h1 class="main__title">ANGULAR VS REACT</h1>
+        <div class="main__game-container">
+            <div class="game-box game-box--top"></div>
+            <div class="game-box game-box--top game-box--mid"></div>
+            <div class="game-box game-box--top"></div>
+            <div class="game-box"></div>
+            <div class="game-box game-box--mid"></div>
+            <div class="game-box"></div>
+            <div class="game-box game-box--bot"></div>
+            <div class="game-box game-box--bot game-box--mid"></div>
+            <div class="game-box game-box--bot"></div>
+        </div>
+        <button id="reset-button">Reiniciar juego</button>
+        <div id="scoreboard">
+            <span id="player1-score">angularPlayer: 0</span>
+            <span id="player2-score">reactPlayer: 0</span>
+        </div>
+    </main>
 </body>
 </html>
